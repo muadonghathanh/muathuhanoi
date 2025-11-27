@@ -2,7 +2,7 @@
     <div class="profile">
         <div class="overlay">
             <div class="about d-flex flex-column">
-                <h4>Nhu Quyen</h4> <span>Software Developer</span>
+                <h4>Nhu Quyen</h4> <span>muadonghanoi</span>
             </div>
             <ul class="social-icons">
                 <li><i class="[fa fa-facebook](https://www.facebook.com/wuqishere)"></i></li>
