@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>muathuhanoi</title>
+
   <style>
     :root {
       --bg: #3e5220;
@@ -13,7 +14,9 @@
       --text: #111827;
       --muted: #6b7280;
     }
+
     * { box-sizing: border-box; }
+
     body {
       font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
       margin: 0;
@@ -81,6 +84,7 @@
       border: 5px solid rgba(255,255,255,0.6);
       box-shadow: 0 6px 20px rgba(0,0,0,0.1);
     }
+
     .avatar img {
       width: 100%;
       height: 100%;
@@ -91,10 +95,12 @@
       flex: 2 1 320px;
       padding: 30px 40px;
     }
+
     .right h2 {
       margin: 0 0 8px;
       font-size: 26px;
     }
+
     .right .meta {
       color: var(--muted);
       margin-bottom: 16px;
@@ -113,6 +119,7 @@
       display: flex;
       gap: 20px;
     }
+
     .link-box {
       flex: 1;
       background: #ffffff;
@@ -124,81 +131,66 @@
       transition: 0.3s;
       cursor: pointer;
     }
+
     .link-box:hover {
       background: #e3f7ff;
       border-color: #60a5fa;
     }
+
     .link-box a {
       text-decoration: none;
       color: #1e3a8a;
       font-size: 18px;
     }
 
-    .music-section {
-      margin-top: 50px;
-    }
-
-    .music-title {
-      font-size: 26px;
-      font-weight: bold;
-      margin-bottom: 20px;
-      text-align: center;
-      color: #ffffff;
-    }
-
-    .music-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 20px;
-    }
-
-    .music-card {
+    /* ===== KHU BẠN BÈ TRONG CÙNG 1 Ô ===== */
+    .friends {
       background: #c7d3a1;
-      border-radius: 14px;
-      overflow: hidden;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-      transition: 0.3s;
+      border-radius: 20px;
+      padding: 40px 24px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    }
+
+    .friends h3 {
       text-align: center;
+      font-size: 28px;
+      color: #ffffff;
+      margin-bottom: 30px;
+      text-shadow: 1px 1px 6px rgba(0,0,0,0.3);
     }
 
-    .music-card:hover {
-      transform: translateY(-5px);
+    .friend-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
     }
 
-    .music-card img {
-      width: 100%;
-      height: 180px;
+    .friend-card {
+      background: linear-gradient(145deg, #6b7f3b, #b4a73b);
+      border-radius: 18px;
+      padding: 20px;
+      text-align: center;
+      color: #fff;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.2);
+    }
+
+    .friend-card img {
+      width: 150px;
+      height: 150px;
+      border-radius: 14px;
       object-fit: cover;
+      border: 4px solid rgba(255,255,255,0.7);
+      margin-bottom: 12px;
     }
 
-    .music-info {
-      padding: 12px;
+    .friend-card h4 {
+      margin: 8px 0 6px;
+      font-size: 22px;
     }
 
-    .music-info a {
-      display: block;
-      font-weight: bold;
-      font-size: 16px;
-      color: #1e40af;
-      text-decoration: none;
-    }
-
-    .music-info span {
-      font-size: 14px;
-      color: #374151;
-    }
-
-    /* ===== PHẦN GIF MÈO ===== */
-    .cat-gif-section {
-      margin-top: 60px;
-      display: flex;
-      justify-content: center;
-    }
-
-    .cat-gif-section img {
-      width: 220px;
-      border-radius: 16px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    .friend-card p {
+      font-size: 14.5px;
+      opacity: 0.95;
     }
 
     footer {
@@ -208,11 +200,6 @@
       font-size: 14px;
     }
 
-    @media(max-width: 720px){
-      .right { padding: 20px; }
-      header h1 { font-size: 28px; }
-    }
-
     #leaves-container {
       position: fixed;
       top: 0;
@@ -220,8 +207,8 @@
       width: 100%;
       height: 100%;
       pointer-events: none;
-      overflow: hidden;
     }
+
     .leaf {
       position: absolute;
       top: -10vh;
@@ -229,128 +216,47 @@
       height: 20px;
       background-image: url('https://raw.githubusercontent.com/muadonghathanh/muathuhanoi/refs/heads/main/leaf.png');
       background-size: cover;
-      animation-name: fall;
-      animation-iteration-count: infinite;
-      animation-timing-function: linear;
+      animation: fall linear infinite;
     }
+
     @keyframes fall {
-      0% { transform: translateY(0) rotate(0deg); }
       100% { transform: translateY(110vh) rotate(360deg); }
     }
   </style>
 </head>
 
 <body>
-  <header>
-    <a class="home-btn" href="https://daisubinta.github.io/Nhom4tin12anh.github.io/">⬅ Trang chính</a>
-    <h1>Giới thiệu bản thân</h1>
-    <p>Trang cá nhân của Như Quyên</p>
-  </header>
 
-  <div id="leaves-container"></div>
+<header>
+  <a class="home-btn" href="https://daisubinta.github.io/Nhom4tin12anh.github.io/">⬅ Trang chính</a>
+  <h1>Giới thiệu bản thân</h1>
+  <p>Trang cá nhân của Như Quyên</p>
+</header>
 
-  <div class="container">
-    <div class="card">
-      <div class="left">
-        <div class="avatar">
-          <img src="https://raw.githubusercontent.com/muadonghathanh/muathuhanoi/refs/heads/main/407d77336df1e49489bea5b34594a41c.jpg">
-        </div>
-      </div>
+<div id="leaves-container"></div>
 
-      <div class="right">
-        <h2>Nhu Quyen</h2>
-        <div class="meta">Lớp 12 Anh — THPT Chuyên Bến Tre</div>
-
-        <div class="about">
-          <p>Hello các bạn, mình là Phan Như Quyên nè hihi!</p>
-        </div>
-
-        <div class="links">
-          <div class="link-box"><a href="https://www.facebook.com/wuqishere">Facebook</a></div>
-          <div class="link-box"><a href="https://www.instagram.com/wuqishere/">Instagram</a></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="music-section">
-      <div class="music-title">🎧 NHẠC TUI NGHE</div>
-      <div class="music-grid">
-
-        <div class="music-card">
-          <img src="https://raw.githubusercontent.com/muadonghathanh/muathuhanoi/refs/heads/main/3ea010b1053217e72ffffc3d38e8230e.jpg">
-          <div class="music-info">
-            <a href="https://open.spotify.com/track/5PGh9MyKry8slG5AfvD1eD" target="_blank">Hà Nội</a>
-            <span>Obito, VSTRA</span>
-          </div>
-        </div>
-
-        <div class="music-card">
-          <img src="https://raw.githubusercontent.com/muadonghathanh/muathuhanoi/refs/heads/main/5e61e5db6fb016dedec3ee19e8bf8fad.jpg">
-          <div class="music-info">
-            <a href="https://open.spotify.com/track/437CIQ8M980cDL9Xh9eUoP" target="_blank">NGÂY THER</a>
-            <span>kidsai</span>
-          </div>
-        </div>
-
-        <div class="music-card">
-          <img src="https://raw.githubusercontent.com/muadonghathanh/muathuhanoi/refs/heads/main/97a21301630ce3762bd373b6c76d8bec.jpg">
-          <div class="music-info">
-            <a href="https://open.spotify.com/track/33SYx5viijwLGMqfl50FKI" target="_blank">Badtrip</a>
-            <span>MCK</span>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- ===== CHỖ DÁN GIF CON MÈO ===== -->
-    <div class="cat-gif-section">
-      <img src="https://raw.githubusercontent.com/muadonghathanh/muathuhanoi/refs/heads/main/CPlkqEvq8gRDW.webp" alt="lu bi sọp">
-    </div>
-
-  </div>
-  <!-- Khu giới thiệu bạn bè -->
 <div class="container friends">
-  
+
   <h3>Những người bạn đặc biệt của tui ✨</h3>
 
   <div class="friend-list">
 
-    <!-- Lu Bi -->
     <div class="friend-card">
-      <img src="https://raw.githubusercontent.com/muadonghathanh/muathuhanoi/refs/heads/main/lubi.jpg" alt="Lu Bi">
+      <img src="https://raw.githubusercontent.com/muadonghathanh/muathuhanoi/refs/heads/main/lubi.jpg">
       <h4>Lu Bi</h4>
       <p>Lu Bi là một bé chó vàng Phú Quốc chính hiệu, hay cắn bậy nhưng rất nghe lời. Bé đã 10 tuổi rồi, vừa già mà vừa đáng yêu, chỉ thích cắn con người, sexual orientation: Lesbian 🐾</p>
     </div>
 
-    <!-- Bi Sọp -->
     <div class="friend-card">
-      <img src="https://raw.githubusercontent.com/muadonghathanh/muathuhanoi/refs/heads/main/bisop.jpg" alt="Bi Sọp">
+      <img src="https://raw.githubusercontent.com/muadonghathanh/muathuhanoi/refs/heads/main/bisop.jpg">
       <h4>Bi Sọp</h4>
-      <p> Cọp là con của người yêu cũ của Lu Bi, năm nay 5 tuổi. Bé là giống chó dện, màu như nùi giẻ, từng có tiền sử bị xà mâu. Tính hơi dữ, hay rượt cắn mèo với gà, sexual orientation: Bisexual 🤍</p>
+      <p>Cọp là con của người yêu cũ của Lu Bi, năm nay 5 tuổi. Bé là giống chó dện, màu như nùi giẻ, từng có tiền sử bị xà mâu. Tính hơi dữ, hay rượt cắn mèo với gà, sexual orientation: Bisexual 🤍</p>
     </div>
 
   </div>
 </div>
 
+<footer>© 2025 — Trang cá nhân của Nhu Quyen</footer>
 
-  <footer>© 2025 — Trang cá nhân của Nhu Quyen</footer>
-
-  <script>
-    const container = document.getElementById('leaves-container');
-    const leafCount = 20;
-
-    for (let i = 0; i < leafCount; i++) {
-      let leaf = document.createElement('div');
-      leaf.classList.add('leaf');
-
-      leaf.style.left = Math.random() * 100 + 'vw';
-      leaf.style.animationDuration = 4 + Math.random() * 6 + 's';
-      leaf.style.opacity = Math.random();
-      leaf.style.transform = `scale(${0.5 + Math.random()})`;
-
-      container.appendChild(leaf);
-    }
-  </script>
 </body>
 </html>
