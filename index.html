@@ -6,7 +6,7 @@
   <title>muathuhanoi</title>
   <style>
     :root {
-      --bg: #3e5220; /* xanh lá đậm hơn */
+      --bg: #3e5220;
       --card: #ffffff;
       --primary: #2563eb;
       --secondary: #1e40af;
@@ -20,7 +20,7 @@
       background: var(--bg);
       color: var(--text);
       line-height: 1.6;
-      background-image: url('https://raw.githubusercontent.com/muadonghathanh/muathuhanoi/refs/heads/main/leaves-bg.png'); /* hình nền lá rơi */
+      background-image: url('https://raw.githubusercontent.com/muadonghathanh/muathuhanoi/refs/heads/main/leaves-bg.png');
       background-size: cover;
       background-attachment: fixed;
     }
@@ -33,7 +33,7 @@
       position: relative;
     }
 
-    /* Nút quay về trang chính */
+    /* Nút quay về trang chính (đã sửa để gắn link tùy ý) */
     .home-btn {
       position: absolute;
       top: 20px;
@@ -109,7 +109,6 @@
       min-height: 120px;
     }
 
-    /* 2 ô liên kết mạng xã hội */
     .links {
       margin-top: 30px;
       display: flex;
@@ -147,7 +146,8 @@
       .right { padding: 20px; }
       header h1 { font-size: 28px; }
     }
-      /* Lá rơi */
+
+    /* Lá rơi */
     #leaves-container {
       position: fixed;
       top: 0;
@@ -177,12 +177,13 @@
 
 <body>
   <header>
-    <a class="home-btn" href="index.html">⬅ Trang chính</a>
+    <!-- CHỈ CẦN DÁN LINK TRANG CHÍNH CỦA BẠN VÀO DÒNG DƯỚI -->
+    <a class="home-btn" href="https://daisubinta.github.io/Nhom4tin12anh.github.io/">⬅ Trang chính</a>
+
     <h1>Giới thiệu bản thân</h1>
     <p>Trang cá nhân của Như Quyên</p>
   </header>
 
-  <!-- Hiệu ứng lá rơi -->
   <div id="leaves-container"></div>
 
   <div class="container">
@@ -210,6 +211,7 @@
   </div>
 
   <footer>© 2025 — Trang cá nhân của Nhu Quyen</footer>
+
   <script>
     const container = document.getElementById('leaves-container');
     const leafCount = 20;
