@@ -33,7 +33,6 @@
       position: relative;
     }
 
-    /* Nút quay về trang chính (đã sửa để gắn link tùy ý) */
     .home-btn {
       position: absolute;
       top: 20px;
@@ -135,6 +134,61 @@
       font-size: 18px;
     }
 
+    /* PHẦN ÂM NHẠC */
+    .music-section {
+      margin-top: 50px;
+    }
+
+    .music-title {
+      font-size: 26px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      text-align: center;
+      color: #1e3a8a;
+    }
+
+    .music-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+    }
+
+    .music-card {
+      background: #fff;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+      transition: 0.3s;
+      text-align: center;
+    }
+
+    .music-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .music-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .music-info {
+      padding: 12px;
+    }
+
+    .music-info a {
+      display: block;
+      font-weight: bold;
+      font-size: 16px;
+      color: #1e40af;
+      text-decoration: none;
+    }
+
+    .music-info span {
+      font-size: 14px;
+      color: #6b7280;
+    }
+
     footer {
       text-align: center;
       padding: 20px 0;
@@ -147,7 +201,6 @@
       header h1 { font-size: 28px; }
     }
 
-    /* Lá rơi */
     #leaves-container {
       position: fixed;
       top: 0;
@@ -177,9 +230,7 @@
 
 <body>
   <header>
-    <!-- CHỈ CẦN DÁN LINK TRANG CHÍNH CỦA BẠN VÀO DÒNG DƯỚI -->
     <a class="home-btn" href="https://daisubinta.github.io/Nhom4tin12anh.github.io/">⬅ Trang chính</a>
-
     <h1>Giới thiệu bản thân</h1>
     <p>Trang cá nhân của Như Quyên</p>
   </header>
@@ -190,7 +241,7 @@
     <div class="card">
       <div class="left">
         <div class="avatar">
-          <img src="https://raw.githubusercontent.com/muadonghathanh/muathuhanoi/refs/heads/main/407d77336df1e49489bea5b34594a41c.jpg" alt="Ảnh cá nhân">
+          <img src="https://raw.githubusercontent.com/muadonghathanh/muathuhanoi/refs/heads/main/407d77336df1e49489bea5b34594a41c.jpg">
         </div>
       </div>
 
@@ -208,6 +259,39 @@
         </div>
       </div>
     </div>
+
+    <!-- PHẦN ÂM NHẠC -->
+    <div class="music-section">
+      <div class="music-title">🎧 Âm nhạc yêu thích</div>
+      <div class="music-grid">
+
+        <div class="music-card">
+          <img src="https://via.placeholder.com/300x300?text=Ha+Noi">
+          <div class="music-info">
+            <a href="https://www.youtube.com/results?search_query=H%C3%A0+N%E1%BB%99i+Obito+VSTRA" target="_blank">Hà Nội</a>
+            <span>Obito, VSTRA</span>
+          </div>
+        </div>
+
+        <div class="music-card">
+          <img src="https://via.placeholder.com/300x300?text=Ngay+Tho">
+          <div class="music-info">
+            <a href="https://www.youtube.com/results?search_query=Ng%C3%A2y+Th%C6%A1+KidSai" target="_blank">Ngây Thơ</a>
+            <span>KidSai</span>
+          </div>
+        </div>
+
+        <div class="music-card">
+          <img src="https://via.placeholder.com/300x300?text=Badtrip">
+          <div class="music-info">
+            <a href="https://www.youtube.com/results?search_query=Badtrip+MCK" target="_blank">Badtrip</a>
+            <span>MCK</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
   </div>
 
   <footer>© 2025 — Trang cá nhân của Nhu Quyen</footer>
